@@ -11,6 +11,7 @@ import androidx.appcompat.widget.AppCompatEditText;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 
+import com.sendbird.android.SendBird;
 import com.sendbird.android.UserMessageParams;
 import com.sendbird.uikit.fragments.ChannelFragment;
 import com.sendbird.uikit.log.Logger;
@@ -41,7 +42,7 @@ public class CustomChannelFragment extends ChannelFragment implements StipopDele
         stipopIV.setMaxWidth(24);
         stipopIV.setMaxHeight(24);
 
-        Stipop.Companion.connect(getActivity(), stipopIV, "1827399", "en", "US", this);
+        Stipop.Companion.connect(getActivity(), stipopIV, SendBird.getCurrentUser().getUserId(), "en", "US", this);
 
         stipopIV.setOnClickListener((v) -> {
             Stipop.Companion.showKeyboard();
