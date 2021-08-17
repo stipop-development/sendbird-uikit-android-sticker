@@ -59,11 +59,11 @@ public class CustomMessageOtherViewHolder extends MessageViewHolder {
                 .apply(RequestOptions.circleCropTransform())
                 .into(binding.ivProfileView);
 
-        binding.tvMessage.setText(message.getMessage());
+        Glide.with(context).load(message.getMessage()).into(binding.ivSticker);
     }
 
     @Override
     public View getClickableView() {
-        return binding.tvMessage;
+        return binding.ivSticker;
     }
 }

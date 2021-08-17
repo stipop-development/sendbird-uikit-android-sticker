@@ -7,6 +7,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
+import com.bumptech.glide.Glide;
 import com.sendbird.android.BaseChannel;
 import com.sendbird.android.BaseMessage;
 import com.sendbird.uikit.activities.viewholder.MessageViewHolder;
@@ -30,7 +31,7 @@ public class CustomMessageMeViewHolder extends MessageViewHolder {
         String sentAt = DateUtils.formatDateTime(context, message.getCreatedAt(), DateUtils.FORMAT_SHOW_TIME);
         binding.tvSentAt.setText(sentAt);
         binding.ivStatus.drawStatus(message, channel);
-        binding.tvMessage.setText(message.getMessage());
+        Glide.with(context).load(message.getMessage()).into(binding.ivSticker);
 
         int paddingTop = context.getResources().getDimensionPixelSize(com.sendbird.uikit.R.dimen.sb_size_8);
         int paddingBottom = context.getResources().getDimensionPixelSize(com.sendbird.uikit.R.dimen.sb_size_8);
@@ -39,6 +40,6 @@ public class CustomMessageMeViewHolder extends MessageViewHolder {
 
     @Override
     public View getClickableView() {
-        return binding.tvMessage;
+        return binding.ivSticker;
     }
 }

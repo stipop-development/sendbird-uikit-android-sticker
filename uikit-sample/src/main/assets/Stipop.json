@@ -11,8 +11,8 @@
 		"dark" : "#2E363A"
 	  },
 	  "mainColor" : {
-		"light" : "#FF5D1E",
-		"dark" : "#FF855B"
+		"light" : "#c2a9fa",
+		"dark" : "#6211c8"
 	  },
 	  "iconColor" : {
 		"normalColor": {
@@ -20,8 +20,8 @@
 		  "dark": "#646F7C"
 		},
 		"tintColor": {
-		  "light": "#FF5D1E",
-		  "dark": "#FF855B"
+		  "light": "#c2a9fa",
+		  "dark": "#6211c8"
 		}
 	  },
 	  "font" : {

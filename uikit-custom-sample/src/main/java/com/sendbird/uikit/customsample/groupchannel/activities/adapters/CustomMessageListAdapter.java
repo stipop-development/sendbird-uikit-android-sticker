@@ -19,8 +19,8 @@ import com.sendbird.uikit.utils.MessageUtils;
 
 public class CustomMessageListAdapter extends MessageListAdapter {
 
-    public static final int VIEW_HIGHLIGHT_MESSAGE_ME_TYPE = 1001;
-    public static final int VIEW_HIGHLIGHT_MESSAGE_OTHER_TYPE = 1002;
+    public static final int VIEW_CUSTOM_MESSAGE_ME_TYPE = 1001;
+    public static final int VIEW_CUSTOM_MESSAGE_OTHER_TYPE = 1002;
 
     public CustomMessageListAdapter(boolean useMessageGroupUI) {
         super(null, null, null, useMessageGroupUI);
@@ -31,10 +31,10 @@ public class CustomMessageListAdapter extends MessageListAdapter {
     public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // TODO: Create the custom ViewHolder and return it.
         // Create your custom ViewHolder or call super.onCreateViewHolder() if you want to use the default.
-        if (viewType == VIEW_HIGHLIGHT_MESSAGE_ME_TYPE) {
+        if (viewType == VIEW_CUSTOM_MESSAGE_ME_TYPE) {
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
             return new HighlightMessageMeViewHolder(DataBindingUtil.inflate(inflater, R.layout.view_highlight_message_me_holder, parent, false));
-        } else if (viewType == VIEW_HIGHLIGHT_MESSAGE_OTHER_TYPE) {
+        } else if (viewType == VIEW_CUSTOM_MESSAGE_OTHER_TYPE) {
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
             return new HighlightMessageOtherViewHolder(DataBindingUtil.inflate(inflater, R.layout.view_highlight_message_other_holder, parent, false));
         } else {
@@ -59,9 +59,9 @@ public class CustomMessageListAdapter extends MessageListAdapter {
                 customType.equals(StringSet.highlight) &&
                 message instanceof UserMessage) {
             if (MessageUtils.isMine(message)) {
-                return VIEW_HIGHLIGHT_MESSAGE_ME_TYPE;
+                return VIEW_CUSTOM_MESSAGE_ME_TYPE;
             } else {
-                return VIEW_HIGHLIGHT_MESSAGE_OTHER_TYPE;
+                return VIEW_CUSTOM_MESSAGE_OTHER_TYPE;
             }
         }
 
