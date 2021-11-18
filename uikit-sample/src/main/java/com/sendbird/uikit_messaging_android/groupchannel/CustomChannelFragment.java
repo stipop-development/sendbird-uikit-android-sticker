@@ -22,9 +22,9 @@ import com.sendbird.uikit_messaging_android.R;
 
 import io.stipop.Stipop;
 import io.stipop.StipopDelegate;
-import io.stipop.extend.StipopImageView;
-import io.stipop.model.SPPackage;
-import io.stipop.model.SPSticker;
+import io.stipop.custom.StipopImageView;
+import io.stipop.models.SPPackage;
+import io.stipop.models.SPSticker;
 
 public class CustomChannelFragment extends ChannelFragment implements StipopDelegate {
 

@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 
 import io.stipop.Stipop;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 
 public class GlobalApplication extends BaseApplication {
     static GlobalApplication instance;
@@ -11,9 +13,8 @@ public class GlobalApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-
         instance = this;
-        Stipop.Companion.configure(this);
+        Stipop.Companion.configure(this, aBoolean -> null);
     }
 
 }

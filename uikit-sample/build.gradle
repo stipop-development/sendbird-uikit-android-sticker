@@ -53,5 +53,5 @@ dependencies {
     implementation "com.sendbird.sdk:uikit:2.1.6"
 
     // Stipop
-    implementation 'com.github.stipop-development:stipop-android-sdk:0.0.6'
+    implementation 'com.github.stipop-development:stipop-android-sdk:0.3.0'
 }
